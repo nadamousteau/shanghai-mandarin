@@ -265,6 +265,37 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
 .tone-desc{font-size:11px;color:var(--text3);font-weight:600;}
 .tone-ex{font-family:'Noto Sans SC',sans-serif;font-size:17px;font-weight:700;color:var(--rose-d);flex-shrink:0;}
 .sheet-close{width:100%;margin-top:16px;padding:13px;background:var(--cream2);border:none;border-radius:var(--r);font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--text2);cursor:pointer;}
+
+/* ── DISCOVER SCREEN ── */
+#discover{background:var(--cream);justify-content:space-between;position:relative;}
+.disc-hdr{display:flex;align-items:center;gap:12px;padding:18px 20px 12px;position:relative;z-index:1;}
+.disc-prog-wrap{flex:1;}
+.disc-prog-track{background:var(--cream3);border-radius:99px;height:6px;overflow:hidden;}
+.disc-prog-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sage),var(--sky));transition:width .4s cubic-bezier(.34,1.56,.64,1);}
+.disc-ctr{font-size:11px;color:var(--text3);font-weight:700;text-align:right;margin-top:4px;}
+.disc-card-zone{flex:1;display:flex;align-items:center;justify-content:center;padding:12px 20px;position:relative;z-index:1;}
+.disc-card{background:var(--white);border-radius:var(--rl);padding:32px 24px 28px;width:100%;max-width:480px;text-align:center;box-shadow:0 8px 40px var(--shadow),0 2px 8px var(--shadow2);}
+.disc-label{font-size:10px;font-weight:800;color:var(--sage-d);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;background:var(--sage-l);display:inline-block;padding:4px 14px;border-radius:99px;}
+.disc-char{font-family:'Noto Sans SC',sans-serif;font-size:96px;font-weight:900;line-height:1;margin-bottom:12px;background:linear-gradient(160deg,var(--text),var(--text2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.disc-pin{font-size:22px;font-weight:800;color:var(--rose-d);margin-bottom:16px;}
+.disc-fr{font-size:20px;font-weight:900;color:var(--text);margin-bottom:6px;}
+.disc-next-btn{margin:0 20px 24px;width:calc(100% - 40px);padding:17px;border:none;border-radius:var(--r);color:white;font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 5px 18px rgba(212,120,120,.28);transition:transform .1s,background .3s;position:relative;z-index:1;}
+.disc-next-btn:active{transform:scale(.97);}
+.disc-theme-name{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;text-align:center;padding:0 20px 8px;position:relative;z-index:1;}
+
+/* ── DRAW MODE ── */
+.draw-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;}
+.draw-canvas{border-radius:16px;background:var(--cream2);touch-action:none;cursor:crosshair;display:block;}
+.draw-controls{display:flex;gap:10px;width:100%;}
+.draw-clear{flex:1;padding:11px;background:var(--cream3);border:none;border-radius:var(--rs);font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text2);cursor:pointer;}
+.draw-reveal{flex:2;padding:11px;background:linear-gradient(135deg,var(--rose-d),var(--peach));border:none;border-radius:var(--rs);font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:white;cursor:pointer;}
+.draw-answer{display:none;text-align:center;margin-top:8px;animation:stripIn .3s ease;}
+.draw-answer.show{display:block;}
+.draw-answer-char{font-family:'Noto Sans SC',sans-serif;font-size:72px;font-weight:900;color:var(--text);line-height:1;}
+.draw-answer-pin{font-size:16px;font-weight:800;color:var(--rose-d);margin-top:4px;}
+.draw-self-assess{display:none;gap:9px;margin-top:10px;}
+.draw-self-assess.show{display:flex;}
+
 </style>
 </head>
 <body>
@@ -345,6 +376,32 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
   <div class="section-label">Thèmes</div>
   <div class="themes-grid" id="themes-grid"></div>
 </div>
+</div>
+
+<!-- ════════ DISCOVER ════════ -->
+<div id="discover" class="screen">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="disc-hdr">
+    <button class="back-btn" onclick="goHome()">‹</button>
+    <div class="disc-prog-wrap">
+      <div class="disc-prog-track"><div class="disc-prog-fill" id="disc-prog-fill" style="width:0%"></div></div>
+      <div class="disc-ctr" id="disc-ctr">1 / 10</div>
+    </div>
+  </div>
+  <div class="disc-theme-name" id="disc-theme-name"></div>
+  <div class="disc-card-zone">
+    <div class="disc-card" id="disc-card">
+      <div class="disc-label">Découverte</div>
+      <div class="disc-char cn" id="disc-char"></div>
+      <div class="disc-pin" id="disc-pin"></div>
+      <div class="disc-fr" id="disc-fr"></div>
+      <button class="speak-btn" style="margin-top:14px" onclick="speak(document.getElementById('disc-char').textContent,event)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        Écouter encore
+      </button>
+    </div>
+  </div>
+  <button class="disc-next-btn" id="disc-next-btn" onclick="discoverNext()" style="background:linear-gradient(135deg,var(--rose-d),var(--peach))">Suivant</button>
 </div>
 
 <!-- ════════ SESSION ════════ -->
@@ -709,7 +766,7 @@ try{
 }catch(e){}
 
 function getAvailableModes(){
-  const modes=['flash','mcq','char-mcq','reverse-mcq','type-fr'];
+  const modes=['flash','mcq','char-mcq','reverse-mcq','type-fr','draw'];
   if(recogSupported) modes.push('voice');
   return modes;
 }
@@ -824,8 +881,57 @@ function buildQ(word, allWords, themeId){
 
 function startTheme(id){
   const t=THEMES[id];
-  const qs=t.words.map(w=>buildQ(w,t.words,id));
-  launch(qs,id,t.name);
+  launchDiscover(t);
+}
+
+// ── DISCOVER MODE ──
+let DISC={words:[],idx:0,themeId:null};
+
+function launchDiscover(t){
+  DISC={words:[...t.words],idx:0,themeId:t.id};
+  document.getElementById('disc-theme-name').textContent=t.name;
+  showScreen('discover');
+  renderDiscoverCard();
+}
+
+function renderDiscoverCard(){
+  const w=DISC.words[DISC.idx];
+  const tot=DISC.words.length;
+  document.getElementById('disc-prog-fill').style.width=Math.round(DISC.idx/tot*100)+'%';
+  document.getElementById('disc-ctr').textContent=(DISC.idx+1)+' / '+tot;
+  const card=document.getElementById('disc-card');
+  card.style.animation='none'; card.offsetHeight;
+  card.style.animation='cardPop .32s cubic-bezier(.34,1.56,.64,1)';
+  document.getElementById('disc-char').textContent=w.char;
+  document.getElementById('disc-pin').textContent=w.pin;
+  document.getElementById('disc-fr').textContent=w.fr;
+  const isLast=DISC.idx===tot-1;
+  const nb=document.getElementById('disc-next-btn');
+  nb.textContent=isLast?"C'est parti !":"Suivant";
+  nb.style.background=isLast
+    ?'linear-gradient(135deg,var(--sage-d),var(--sky))'
+    :'linear-gradient(135deg,var(--rose-d),var(--peach))';
+  setTimeout(()=>speak(w.char),350);
+}
+
+function discoverNext(){
+  if(DISC.idx<DISC.words.length-1){
+    DISC.idx++;
+    renderDiscoverCard();
+  } else {
+    const t=THEMES[DISC.themeId];
+    const allWords=THEMES.flatMap(th=>th.words);
+    const modes=getAvailableModes();
+    let qs=[];
+    t.words.forEach(w=>{
+      modes.forEach(mode=>{
+        const others=getDistractors(w,allWords);
+        qs.push({word:w,mode,others,themeId:t.id});
+      });
+    });
+    qs=qs.sort(()=>Math.random()-.5);
+    launch(qs,t.id,t.name);
+  }
 }
 
 function startSRSSession(){
@@ -884,6 +990,7 @@ function renderQ(){
   else if(m==='reverse-mcq') renderReverseMCQ(z,q);
   else if(m==='type-fr') renderTypeFr(z,q);
   else if(m==='voice')  renderVoice(z,q);
+  else if(m==='draw')   renderDraw(z,q);
   else renderFlash(z,q);
 }
 
@@ -926,7 +1033,7 @@ function renderFlash(z,q){
           <div class="bigchar cn sm">${w.char}</div>
           <div class="pinyin" style="font-size:14px">${w.pin}</div>
           <div style="font-size:23px;font-weight:900;color:var(--text);margin:10px 0">${w.fr}</div>
-          <div style="font-size:12px;color:var(--text3);font-style:italic;font-weight:600">${w.ctx}</div>
+
         </div>
       </div>
     </div>
@@ -974,7 +1081,6 @@ function renderMCQ(z,q){
     <div class="bigchar cn">${w.char}</div>
     <div class="pinyin">${w.pin}</div>
     ${speakBtn(w.char)}
-    <div class="ctx-tag">${w.ctx}</div>
     <div class="opts-grid">${opts.map(o=>`<button class="opt-btn">${o.fr}</button>`).join('')}</div>
   </div>`;
   attachMCQListeners(opts, ci, w.fr);
@@ -987,7 +1093,6 @@ function renderCharMCQ(z,q){
   z.innerHTML=`<div class="qcard" id="qcard" style="width:100%;max-width:480px;">
     <div class="mbadge mb-char">Quel caractère ?</div>
     <div class="fr-big">${w.fr}</div>
-    <div class="ctx-tag">${w.ctx}</div>
     <div class="opts-grid">${opts.map(o=>`<button class="opt-btn"><span class="opt-char cn">${o.char}</span>${o.pin}</button>`).join('')}</div>
   </div>`;
   attachMCQListeners(opts, ci, w.fr);
@@ -1000,7 +1105,6 @@ function renderReverseMCQ(z,q){
   z.innerHTML=`<div class="qcard" id="qcard" style="width:100%;max-width:480px;">
     <div class="mbadge mb-rev">Sans indice — que veut dire...</div>
     <div class="bigchar cn">${w.char}</div>
-    <div class="ctx-tag">${w.ctx}</div>
     <div class="opts-grid">${opts.map(o=>`<button class="opt-btn">${o.fr}</button>`).join('')}</div>
   </div>`;
   attachMCQListeners(opts, ci, w.fr);
@@ -1033,7 +1137,6 @@ function renderTypeFr(z,q){
     <div class="bigchar cn">${w.char}</div>
     <div class="pinyin">${w.pin}</div>
     ${speakBtn(w.char)}
-    <div class="ctx-tag">${w.ctx}</div>
     <div class="type-input-wrap">
       <input class="type-input" id="type-inp" type="text" placeholder="Traduction en français..." autocomplete="off" autocorrect="off" spellcheck="false" oninput="typeCheck()" onkeydown="if(event.key==='Enter')submitType()">
       <div class="type-hint">Tape la traduction française</div>
@@ -1089,6 +1192,106 @@ function submitType(){
   showNext();
 }
 
+
+// ── DRAW MODE: see French → trace the character ──
+function renderDraw(z,q){
+  const w=q.word;
+  z.innerHTML=`<div class="qcard" id="qcard" style="width:100%;max-width:480px;">
+    <div class="mbadge mb-type">Trace le caractère</div>
+    <div class="fr-big">${w.fr}</div>
+    <div class="pinyin">${w.pin}</div>
+    <div class="draw-wrap">
+      <canvas class="draw-canvas" id="draw-canvas" width="220" height="220"></canvas>
+      <div class="draw-controls">
+        <button class="draw-clear" onclick="drawClear()">Effacer</button>
+        <button class="draw-reveal" onclick="drawReveal()">Voir la réponse</button>
+      </div>
+      <div class="draw-answer" id="draw-answer">
+        <div class="draw-answer-char cn" id="draw-ans-char"></div>
+        <div class="draw-answer-pin" id="draw-ans-pin"></div>
+        <div style="font-size:12px;color:var(--text3);font-weight:600;margin-top:4px">Compare avec ton tracé</div>
+      </div>
+      <div class="draw-self-assess assess-row" id="draw-assess" style="display:none">
+        <button class="assess-btn ab-fail" onclick="drawAns('fail')">Raté</button>
+        <button class="assess-btn ab-hard" onclick="drawAns('hard')">Difficile</button>
+        <button class="assess-btn ab-easy" onclick="drawAns('easy')">Correct</button>
+      </div>
+    </div>
+  </div>`;
+  initCanvas();
+}
+
+let drawCtx=null, drawActive=false;
+
+function initCanvas(){
+  const canvas=document.getElementById('draw-canvas');
+  if(!canvas) return;
+  drawCtx=canvas.getContext('2d');
+  drawCtx.strokeStyle='#3d2e22';
+  drawCtx.lineWidth=4;
+  drawCtx.lineCap='round';
+  drawCtx.lineJoin='round';
+  drawCtx.fillStyle='#f7ede0';
+  drawCtx.fillRect(0,0,canvas.width,canvas.height);
+
+  // Draw faint grid lines for guidance
+  drawCtx.save();
+  drawCtx.strokeStyle='rgba(184,149,122,0.2)';
+  drawCtx.lineWidth=1;
+  drawCtx.beginPath();
+  drawCtx.moveTo(110,10); drawCtx.lineTo(110,210);
+  drawCtx.moveTo(10,110); drawCtx.lineTo(210,110);
+  drawCtx.stroke();
+  drawCtx.restore();
+
+  const getPos=(e)=>{
+    const r=canvas.getBoundingClientRect();
+    const src=e.touches?e.touches[0]:e;
+    return {x:(src.clientX-r.left)*(canvas.width/r.width), y:(src.clientY-r.top)*(canvas.height/r.height)};
+  };
+  canvas.addEventListener('mousedown', e=>{drawActive=true; const p=getPos(e); drawCtx.beginPath(); drawCtx.moveTo(p.x,p.y);});
+  canvas.addEventListener('mousemove', e=>{if(!drawActive)return; const p=getPos(e); drawCtx.lineTo(p.x,p.y); drawCtx.stroke(); drawCtx.beginPath(); drawCtx.moveTo(p.x,p.y);});
+  canvas.addEventListener('mouseup', ()=>drawActive=false);
+  canvas.addEventListener('touchstart', e=>{e.preventDefault(); drawActive=true; const p=getPos(e); drawCtx.beginPath(); drawCtx.moveTo(p.x,p.y);},{passive:false});
+  canvas.addEventListener('touchmove', e=>{e.preventDefault(); if(!drawActive)return; const p=getPos(e); drawCtx.lineTo(p.x,p.y); drawCtx.stroke(); drawCtx.beginPath(); drawCtx.moveTo(p.x,p.y);},{passive:false});
+  canvas.addEventListener('touchend', ()=>drawActive=false);
+}
+
+function drawClear(){
+  if(!drawCtx) return;
+  const canvas=document.getElementById('draw-canvas');
+  drawCtx.fillStyle='#f7ede0';
+  drawCtx.fillRect(0,0,canvas.width,canvas.height);
+  drawCtx.save();
+  drawCtx.strokeStyle='rgba(184,149,122,0.2)';
+  drawCtx.lineWidth=1;
+  drawCtx.beginPath();
+  drawCtx.moveTo(110,10); drawCtx.lineTo(110,210);
+  drawCtx.moveTo(10,110); drawCtx.lineTo(210,110);
+  drawCtx.stroke();
+  drawCtx.restore();
+}
+
+function drawReveal(){
+  const w=SES.qs[SES.idx].word;
+  document.getElementById('draw-ans-char').textContent=w.char;
+  document.getElementById('draw-ans-pin').textContent=w.pin;
+  const ans=document.getElementById('draw-answer');
+  ans.classList.add('show');
+  document.getElementById('draw-assess').style.display='flex';
+  speak(w.char);
+}
+
+function drawAns(r){
+  const w=SES.qs[SES.idx].word;
+  let rating=0;
+  if(r==='easy'){SES.correct++;SES.xpEarned+=15;addWord(w.char);toast('+15 XP');rating=3;}
+  else if(r==='hard'){SES.partial+=0.5;SES.xpEarned+=8;toast('+8 XP');rating=1;}
+  else{if(SES.lives>0)SES.lives--;renderLives();rating=0;}
+  srsUpdate(w.char,rating);
+  showNext();
+}
+
 // ── VOICE MODE ──
 let recogInstance=null;
 
@@ -1098,7 +1301,6 @@ function renderVoice(z,q){
     <div class="mbadge mb-voice">Prononce ce mot</div>
     <div class="bigchar cn">${w.char}</div>
     <div class="pinyin">${w.pin}</div>
-    <div class="ctx-tag">${w.ctx}</div>
     <div class="voice-zone">
       <div class="voice-transcript cn" id="v-transcript"></div>
       <button class="mic-btn" id="mic-btn" onclick="toggleMic()">
