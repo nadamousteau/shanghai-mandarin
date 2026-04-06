@@ -55,20 +55,9 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
 .cd-bar{margin-top:10px;background:rgba(255,255,255,.25);border-radius:99px;height:4px;overflow:hidden;}
 .cd-bar-fill{height:100%;background:white;border-radius:99px;transition:width .6s;}
 
-/* LEVEL CARD */
-.level-card{margin:14px 20px;background:var(--white);border-radius:var(--rl);padding:18px 20px;box-shadow:0 4px 24px var(--shadow),0 1px 4px var(--shadow2);position:relative;z-index:1;}
-.lv-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.lv-badge{background:linear-gradient(135deg,var(--rose),var(--peach));color:var(--white);font-size:11px;font-weight:800;padding:5px 14px;border-radius:99px;letter-spacing:.5px;}
-.lv-xp{font-size:12px;color:var(--text3);font-weight:700;}
-.xp-track{background:var(--cream2);border-radius:99px;height:8px;overflow:hidden;}
-.xp-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rose),var(--peach));transition:width .7s cubic-bezier(.34,1.56,.64,1);box-shadow:0 0 8px rgba(232,164,164,.5);}
 
-/* STATS */
-.stats-row{display:flex;gap:10px;margin:0 20px 14px;position:relative;z-index:1;}
-.stat-pill{flex:1;background:var(--white);border-radius:var(--r);padding:14px 8px;text-align:center;box-shadow:0 4px 16px var(--shadow2);}
-.sv{font-size:21px;font-weight:900;}
-.sl{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-top:2px;}
-.sv.c1{color:var(--rose-d)}.sv.c2{color:var(--peach)}.sv.c3{color:var(--sage-d)}
+
+
 
 /* SRS DUE BUTTON */
 .srs-btn{margin:0 20px 12px;position:relative;z-index:1;background:linear-gradient(135deg,var(--lav),var(--sky));border:none;border-radius:var(--rl);padding:17px 20px;color:var(--white);font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;width:calc(100% - 40px);display:flex;align-items:center;gap:12px;box-shadow:0 6px 22px rgba(196,168,232,.35);transition:transform .12s;text-align:left;}
@@ -240,18 +229,9 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
 .res-btn{background:linear-gradient(135deg,var(--rose-d),var(--peach));border:none;border-radius:var(--r);padding:16px 36px;color:white;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;width:100%;max-width:300px;box-shadow:0 5px 18px rgba(212,120,120,.28);transition:transform .1s;}
 .res-btn:active{transform:scale(.97);}
 
-/* TOASTS */
-.xp-toast{position:fixed;top:22px;right:14px;z-index:1000;background:linear-gradient(135deg,var(--rose-d),var(--peach));color:white;font-size:13px;font-weight:900;padding:8px 16px;border-radius:99px;pointer-events:none;box-shadow:0 4px 14px rgba(212,120,120,.3);animation:toastUp 1.4s ease forwards;}
-@keyframes toastUp{0%{opacity:0;transform:translateY(4px) scale(.85);}20%{opacity:1;transform:translateY(-4px) scale(1.05);}75%{opacity:1;transform:translateY(-14px) scale(1);}100%{opacity:0;transform:translateY(-28px) scale(.9);}}
+20%{opacity:1;transform:translateY(-4px) scale(1.05);}75%{opacity:1;transform:translateY(-14px) scale(1);}100%{opacity:0;transform:translateY(-28px) scale(.9);}}
 
-/* LEVEL UP */
-.lv-overlay{position:fixed;inset:0;z-index:2000;background:rgba(253,246,238,.93);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;padding:32px;text-align:center;animation:fadeIn .3s ease;}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-.lv-badge-big{width:106px;height:106px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--peach));display:flex;align-items:center;justify-content:center;margin-bottom:6px;box-shadow:0 10px 36px rgba(212,120,120,.28);animation:circleIn .45s cubic-bezier(.34,1.56,.64,1);font-family:'Noto Sans SC',sans-serif;font-size:38px;font-weight:900;color:white;}
-.lv-title{font-size:29px;font-weight:900;color:var(--text);}
-.lv-name{font-size:15px;color:var(--text2);font-weight:700;margin-top:2px;}
-.lv-unlock{font-size:13px;color:var(--sage-d);font-weight:800;margin-top:7px;}
-.lv-btn{margin-top:18px;background:linear-gradient(135deg,var(--rose-d),var(--peach));border:none;border-radius:var(--r);padding:13px 34px;color:white;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;}
+
 
 /* TONES SHEET */
 .sheet-overlay{position:fixed;inset:0;z-index:500;background:rgba(100,60,20,.16);display:flex;align-items:flex-end;animation:fadeIn .2s ease;}
@@ -296,6 +276,37 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
 .draw-self-assess{display:none;gap:9px;margin-top:10px;}
 .draw-self-assess.show{display:flex;}
 
+
+/* ── SURVIVAL & SPEED MODES ── */
+.mode-home-btn{margin:0 20px 12px;position:relative;z-index:1;border:none;border-radius:var(--rl);padding:17px 20px;color:var(--white);font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;width:calc(100% - 40px);display:flex;align-items:center;gap:12px;transition:transform .12s;text-align:left;}
+.mode-home-btn:active{transform:scale(.97);}
+.mode-home-btn.survival{background:linear-gradient(135deg,#e07070,#c05050);box-shadow:0 6px 22px rgba(192,80,80,.3);}
+.mode-home-btn.speed{background:linear-gradient(135deg,var(--peach),#e09040);box-shadow:0 6px 22px rgba(240,184,138,.4);}
+.mode-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-family:'Noto Sans SC',sans-serif;font-size:18px;font-weight:900;color:white;flex-shrink:0;}
+.mode-text{flex:1;}
+.mode-sub{font-size:11px;opacity:.8;font-weight:600;display:block;margin-top:2px;}
+
+/* SPEED TIMER */
+.speed-timer-wrap{position:relative;z-index:1;padding:0 20px 6px;}
+.speed-timer-track{background:var(--cream3);border-radius:99px;height:6px;overflow:hidden;}
+.speed-timer-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sage),var(--peach));transition:width .1s linear;}
+.speed-timer-fill.urgent{background:linear-gradient(90deg,var(--rose-d),#c03030);}
+
+/* SURVIVAL RECORD */
+.survival-record{font-size:11px;color:var(--text3);font-weight:700;text-align:center;margin-bottom:8px;position:relative;z-index:1;}
+
+/* STATS ROW (simplified - no XP) */
+.stats-row{display:flex;gap:10px;margin:0 20px 14px;position:relative;z-index:1;}
+.stat-pill{flex:1;background:var(--white);border-radius:var(--r);padding:14px 8px;text-align:center;box-shadow:0 4px 16px var(--shadow2);}
+.sv{font-size:21px;font-weight:900;}
+.sl{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-top:2px;}
+.sv.c1{color:var(--rose-d)}.sv.c3{color:var(--sage-d)}
+
+/* THEME MASTERY BADGE */
+.tc-mastery{font-size:11px;font-weight:800;margin-top:5px;}
+.tc-mastery.done{color:var(--sage-d);}
+.tc-mastery.locked-msg{color:var(--text3);}
+
 </style>
 </head>
 <body>
@@ -323,18 +334,9 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
     </div>
   </div>
 
-  <div class="level-card">
-    <div class="lv-row">
-      <div class="lv-badge">Niveau <span id="lv-num">1</span> — <span id="lv-name">Voyageuse</span></div>
-      <div class="lv-xp"><span id="xp-cur">0</span> / <span id="xp-need">100</span> XP</div>
-    </div>
-    <div class="xp-track"><div class="xp-fill" id="xp-fill" style="width:0%"></div></div>
-  </div>
-
   <div class="stats-row">
     <div class="stat-pill"><div class="sv c1" id="s-streak">0</div><div class="sl">Streak</div></div>
-    <div class="stat-pill"><div class="sv c2" id="s-xp">0</div><div class="sl">XP Total</div></div>
-    <div class="stat-pill"><div class="sv c3" id="s-words">0</div><div class="sl">Mots</div></div>
+    <div class="stat-pill"><div class="sv c3" id="s-words">0</div><div class="sl">Mots appris</div></div>
   </div>
 
   <button class="srs-btn hidden" id="srs-due-btn" onclick="startSRSSession()">
@@ -351,6 +353,25 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
     <div class="daily-text">
       Session du jour
       <span class="daily-sub">10 cartes · Tous modes mélangés</span>
+    </div>
+    <span style="color:white;font-size:20px;opacity:.7">›</span>
+  </button>
+
+  <div class="survival-record" id="survival-record" style="display:none">Record survie : <span id="survival-best">0</span> cartes</div>
+  <button class="mode-home-btn survival" onclick="startSurvival()">
+    <div class="mode-icon cn">战</div>
+    <div class="mode-text">
+      Mode Survie
+      <span class="mode-sub">3 erreurs et c'est fini — bats ton record</span>
+    </div>
+    <span style="color:white;font-size:20px;opacity:.7">›</span>
+  </button>
+
+  <button class="mode-home-btn speed" onclick="startSpeed()">
+    <div class="mode-icon cn">速</div>
+    <div class="mode-text">
+      Mode Vitesse
+      <span class="mode-sub">5 secondes par carte — réflexe pur</span>
     </div>
     <span style="color:white;font-size:20px;opacity:.7">›</span>
   </button>
@@ -399,6 +420,23 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
         Écouter encore
       </button>
+      <div id="disc-draw-section" style="width:100%;margin-top:16px">
+        <div style="font-size:11px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Essaie de tracer ce caractère</div>
+        <div class="draw-wrap">
+          <canvas class="draw-canvas" id="disc-canvas" width="200" height="200"></canvas>
+          <div class="draw-controls">
+            <button class="draw-clear" onclick="clearDiscCanvas()">Effacer</button>
+            <button class="draw-reveal" onclick="revealDiscChar()">Voir le caractère</button>
+          </div>
+        </div>
+        <div id="disc-draw-reveal" style="display:none;margin-top:12px;text-align:center;animation:stripIn .3s ease">
+          <div style="font-size:11px;color:var(--text3);font-weight:600;margin-bottom:6px">Compare avec ton tracé</div>
+          <div class="disc-char cn" style="font-size:72px;font-weight:900" id="disc-reveal-char"></div>
+        </div>
+        <div id="disc-ready-row" style="display:none;margin-top:12px">
+          <div style="font-size:12px;color:var(--sage-d);font-weight:700;text-align:center">Bien noté — passe à la suite !</div>
+        </div>
+      </div>
     </div>
   </div>
   <button class="disc-next-btn" id="disc-next-btn" onclick="discoverNext()" style="background:linear-gradient(135deg,var(--rose-d),var(--peach))">Suivant</button>
@@ -427,7 +465,7 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
   <div class="res-title" id="res-title">Session terminée</div>
   <div class="res-sub" id="res-sub">Voici tes résultats</div>
   <div class="res-stats">
-    <div class="res-stat"><div class="rs-val rv1" id="r-xp">+0</div><div class="rs-lbl">XP gagnés</div></div>
+    <div class="res-stat"><div class="rs-val rv1" id="r-xp">0/0</div><div class="rs-lbl">Score</div></div>
     <div class="res-stat"><div class="rs-val rv2" id="r-acc">0%</div><div class="rs-lbl">Précision</div></div>
     <div class="res-stat"><div class="rs-val rv3" id="r-str">0</div><div class="rs-lbl">Streak</div></div>
   </div>
@@ -678,11 +716,7 @@ const THEMES = [
   ]},
 ];
 
-const LEVELS=[
-  {name:"Voyageuse",xp:0},{name:"Débutante",xp:100},{name:"Curieuse",xp:250},
-  {name:"Courageuse",xp:500},{name:"Aventurière",xp:900},{name:"Passionnée",xp:1400},
-  {name:"Shanghaïenne",xp:2000},
-];
+
 
 // All possible modes — voice will be filtered if unsupported
 const ALL_MODES=['flash','mcq','char-mcq','reverse-mcq','type-fr','voice'];
@@ -710,6 +744,7 @@ function load(){
   ST.words=ST.words||[];
   ST.thProg=ST.thProg||{};
   ST.srs=ST.srs||{};
+  ST.survivalBest=ST.survivalBest||0;
   // fix streak on load
   const today=new Date().toDateString(), yest=new Date(Date.now()-86400000).toDateString();
   if(ST.lastPlayed && ST.lastPlayed!==today && ST.lastPlayed!==yest) ST.streak=0;
@@ -774,13 +809,8 @@ function getAvailableModes(){
 // ═══════════════════════════════════════════════
 // LEVEL HELPERS
 // ═══════════════════════════════════════════════
-function getLevel(){ let l=0; LEVELS.forEach((lv,i)=>{ if(ST.xp>=lv.xp) l=i; }); return l; }
-function lvProgress(){
-  const l=getLevel(), nl=l+1;
-  if(nl>=LEVELS.length) return {cur:999,need:999,pct:99};
-  const need=LEVELS[nl].xp-LEVELS[l].xp, cur=ST.xp-LEVELS[l].xp;
-  return {cur, need, pct:Math.min(98,Math.round(cur/need*100))};
-}
+); return l; }
+
 
 // ═══════════════════════════════════════════════
 // COUNTDOWN
@@ -800,23 +830,22 @@ function updateCountdown(){
   const learned=ST.words.length;
   const remaining=totalWords-learned;
   const wpd=days>0?Math.ceil(remaining/days):remaining;
-  document.getElementById('cd-words-needed').textContent=
-    days>0 ? `~${wpd} mot${wpd>1?'s':''}/jour` : 'C\'est le jour J !';
+  const el=document.getElementById('cd-words-needed');
+  if(el) el.textContent=days>0?`~${wpd} mot${wpd>1?'s':''}/jour`:'C\'est le jour J !';
 }
 
 // ═══════════════════════════════════════════════
 // HOME UI
 // ═══════════════════════════════════════════════
 function updateHome(){
-  const l=getLevel(), lp=lvProgress();
-  document.getElementById('lv-num').textContent=l+1;
-  document.getElementById('lv-name').textContent=LEVELS[l].name;
-  document.getElementById('xp-cur').textContent=lp.cur;
-  document.getElementById('xp-need').textContent=lp.need;
-  document.getElementById('xp-fill').style.width=lp.pct+'%';
   document.getElementById('s-streak').textContent=ST.streak;
-  document.getElementById('s-xp').textContent=ST.xp;
   document.getElementById('s-words').textContent=ST.words.length;
+  // Update survival record display
+  const best=ST.survivalBest||0;
+  if(best>0){
+    document.getElementById('survival-record').style.display='block';
+    document.getElementById('survival-best').textContent=best;
+  }
   updateCountdown();
   updateSRSButton();
   renderThemes();
@@ -834,11 +863,24 @@ function updateSRSButton(){
   }
 }
 
+// Theme unlock: first theme always open, others need 80% mastery of previous
+function isThemeUnlocked(idx){
+  if(idx===0) return true;
+  const prev=THEMES[idx-1];
+  const masteredCount=prev.words.filter(w=>ST.words.includes(w.char)).length;
+  return masteredCount >= Math.ceil(prev.words.length * 0.8);
+}
+
+function getThemeMasteryPct(t){
+  const count=t.words.filter(w=>ST.words.includes(w.char)).length;
+  return Math.round(count/t.words.length*100);
+}
+
 function renderThemes(){
   const g=document.getElementById('themes-grid'); g.innerHTML='';
   const now=Date.now();
   THEMES.forEach((t,i)=>{
-    const ok=ST.xp>=t.unlockXP;
+    const ok=isThemeUnlocked(i);
     // Count correctly answered unique words for this theme
     const masteredWords=t.words.filter(w=>ST.words.includes(w.char));
     const pct=Math.min(100,Math.round(masteredWords.length/t.words.length*100));
@@ -851,9 +893,11 @@ function renderThemes(){
       <div class="tc-accent"></div>
       <div class="tc-icon cn">${t.label}</div>
       <div class="tc-name">${t.name}</div>
-      <div class="tc-count">${t.words.length} expressions${!ok?' · '+t.unlockXP+' XP':''}</div>
+      <div class="tc-count">${t.words.length} expressions</div>
       ${ok?`<div class="tc-prog"><div class="tc-prog-fill" style="width:${pct}%"></div></div>`:''}
+      ${ok&&pct===100?`<div class="tc-mastery done">Maîtrisé</div>`:''}
       ${ok&&dueCount>0?`<div class="tc-srs-due">${dueCount} à revoir</div>`:''}
+      ${!ok?`<div class="tc-mastery locked-msg">Maîtrise thème précédent à 80%</div>`:''}
     `;
     g.appendChild(d);
   });
@@ -862,7 +906,7 @@ function renderThemes(){
 // ═══════════════════════════════════════════════
 // SESSION BUILD
 // ═══════════════════════════════════════════════
-let SES={qs:[],idx:0,correct:0,lives:3,xpEarned:0,partial:0,themeId:null};
+let SES={qs:[],idx:0,correct:0,lives:3,partial:0,themeId:null,mode:null};
 
 function pickMode(){
   const modes=getAvailableModes();
@@ -882,6 +926,53 @@ function buildQ(word, allWords, themeId){
 function startTheme(id){
   const t=THEMES[id];
   launchDiscover(t);
+}
+
+
+// ── DISCOVER CANVAS ──
+let discCtx=null, discActive=false;
+
+function initDiscCanvas(){
+  const canvas=document.getElementById('disc-canvas');
+  if(!canvas) return;
+  // Remove old listeners by replacing canvas
+  const clone=canvas.cloneNode(true);
+  canvas.parentNode.replaceChild(clone,canvas);
+  discCtx=clone.getContext('2d');
+  discCtx.strokeStyle='#3d2e22'; discCtx.lineWidth=4;
+  discCtx.lineCap='round'; discCtx.lineJoin='round';
+  discCtx.fillStyle='#f7ede0';
+  discCtx.fillRect(0,0,clone.width,clone.height);
+  // Guide cross
+  discCtx.save(); discCtx.strokeStyle='rgba(184,149,122,0.2)'; discCtx.lineWidth=1;
+  discCtx.beginPath(); discCtx.moveTo(100,8); discCtx.lineTo(100,192); discCtx.moveTo(8,100); discCtx.lineTo(192,100); discCtx.stroke(); discCtx.restore();
+  const getPos=(e)=>{
+    const r=clone.getBoundingClientRect();
+    const src=e.touches?e.touches[0]:e;
+    return {x:(src.clientX-r.left)*(clone.width/r.width),y:(src.clientY-r.top)*(clone.height/r.height)};
+  };
+  clone.addEventListener('mousedown',e=>{discActive=true;const p=getPos(e);discCtx.beginPath();discCtx.moveTo(p.x,p.y);});
+  clone.addEventListener('mousemove',e=>{if(!discActive)return;const p=getPos(e);discCtx.lineTo(p.x,p.y);discCtx.stroke();discCtx.beginPath();discCtx.moveTo(p.x,p.y);});
+  clone.addEventListener('mouseup',()=>discActive=false);
+  clone.addEventListener('touchstart',e=>{e.preventDefault();discActive=true;const p=getPos(e);discCtx.beginPath();discCtx.moveTo(p.x,p.y);},{passive:false});
+  clone.addEventListener('touchmove',e=>{e.preventDefault();if(!discActive)return;const p=getPos(e);discCtx.lineTo(p.x,p.y);discCtx.stroke();discCtx.beginPath();discCtx.moveTo(p.x,p.y);},{passive:false});
+  clone.addEventListener('touchend',()=>discActive=false);
+}
+
+function clearDiscCanvas(){
+  const canvas=document.getElementById('disc-canvas');
+  if(!discCtx||!canvas) return;
+  discCtx.fillStyle='#f7ede0'; discCtx.fillRect(0,0,canvas.width,canvas.height);
+  discCtx.save(); discCtx.strokeStyle='rgba(184,149,122,0.2)'; discCtx.lineWidth=1;
+  discCtx.beginPath(); discCtx.moveTo(100,8); discCtx.lineTo(100,192); discCtx.moveTo(8,100); discCtx.lineTo(192,100); discCtx.stroke(); discCtx.restore();
+}
+
+function revealDiscChar(){
+  const w=DISC.words[DISC.idx];
+  document.getElementById('disc-reveal-char').textContent=w.char;
+  document.getElementById('disc-draw-reveal').style.display='block';
+  document.getElementById('disc-ready-row').style.display='block';
+  speak(w.char);
 }
 
 // ── DISCOVER MODE ──
@@ -911,6 +1002,11 @@ function renderDiscoverCard(){
   nb.style.background=isLast
     ?'linear-gradient(135deg,var(--sage-d),var(--sky))'
     :'linear-gradient(135deg,var(--rose-d),var(--peach))';
+  // Reset draw section
+  document.getElementById('disc-draw-section').style.display='block';
+  document.getElementById('disc-draw-reveal').style.display='none';
+  document.getElementById('disc-ready-row').style.display='none';
+  initDiscCanvas();
   setTimeout(()=>speak(w.char),350);
 }
 
@@ -959,7 +1055,7 @@ function startDaily(){
 }
 
 function launch(qs,themeId,label){
-  SES={qs,idx:0,correct:0,lives:3,xpEarned:0,partial:0,themeId};
+  SES={qs,idx:0,correct:0,lives:3,partial:0,themeId,mode:themeId==='survival'?'survival':themeId==='speed'?'speed':null};
   document.getElementById('sess-theme-label').textContent=label||'';
   showScreen('session'); renderLives(); renderQ();
 }
@@ -1058,8 +1154,8 @@ function renderFlash(z,q){
 function flashAns(r){
   const w=SES.qs[SES.idx].word;
   let rating=0;
-  if(r==='easy'){SES.correct++;SES.xpEarned+=12;addWord(w.char);toast('+12 XP');rating=3;}
-  else if(r==='hard'){SES.partial+=0.5;SES.xpEarned+=6;toast('+6 XP');rating=1;}
+  if(r==='easy'){SES.correct++;addWord(w.char);rating=3;}
+  else if(r==='hard'){SES.partial+=0.5;rating=1;}
   else{if(SES.lives>0)SES.lives--;renderLives();rating=0;}
   srsUpdate(w.char,rating);
   showNext();
@@ -1116,9 +1212,9 @@ function selMCQ(idx, ci, btn, correctFr){
   const w=SES.qs[SES.idx].word;
   if(idx===ci){
     btn.classList.add('correct'); card.classList.add('ok');
-    SES.correct++; SES.xpEarned+=15; addWord(w.char);
+    SES.correct++; addWord(w.char);
     strip.textContent='Correct — '+correctFr; strip.className='fb-strip ok';
-    toast('+15 XP'); srsUpdate(w.char,2);
+    srsUpdate(w.char,2);
   } else {
     btn.classList.add('wrong'); card.classList.add('err');
     document.querySelectorAll('.opt-btn')[ci].classList.add('reveal');
@@ -1177,9 +1273,9 @@ function submitType(){
   document.getElementById('type-sub').disabled=true;
   if(isCorrect){
     inp.classList.add('ok'); card.classList.add('ok');
-    SES.correct++; SES.xpEarned+=18; addWord(w.char);
+    SES.correct++; addWord(w.char);
     strip.textContent='Correct ! '+w.fr; strip.className='fb-strip ok';
-    toast('+18 XP'); srsUpdate(w.char,2);
+    srsUpdate(w.char,2);
   } else {
     inp.classList.add('err'); card.classList.add('err');
     if(SES.lives>0)SES.lives--; renderLives();
@@ -1285,8 +1381,8 @@ function drawReveal(){
 function drawAns(r){
   const w=SES.qs[SES.idx].word;
   let rating=0;
-  if(r==='easy'){SES.correct++;SES.xpEarned+=15;addWord(w.char);toast('+15 XP');rating=3;}
-  else if(r==='hard'){SES.partial+=0.5;SES.xpEarned+=8;toast('+8 XP');rating=1;}
+  if(r==='easy'){SES.correct++;addWord(w.char);rating=3;}
+  else if(r==='hard'){SES.partial+=0.5;rating=1;}
   else{if(SES.lives>0)SES.lives--;renderLives();rating=0;}
   srsUpdate(w.char,rating);
   showNext();
@@ -1370,9 +1466,9 @@ function checkVoice(transcript){
 
   const strip=document.getElementById('fb-strip');
   if(isCorrect){
-    SES.correct++; SES.xpEarned+=20; addWord(w.char);
+    SES.correct++; addWord(w.char);
     strip.textContent='Reconnu ! '+w.fr; strip.className='fb-strip ok';
-    toast('+20 XP'); srsUpdate(w.char,3);
+    srsUpdate(w.char,3);
     document.getElementById('v-status').textContent='Bien dit !';
   } else {
     if(SES.lives>0)SES.lives--; renderLives();
@@ -1390,24 +1486,132 @@ function showNext(){
   const nb=document.getElementById('next-btn');
   nb.textContent=SES.idx+1<SES.qs.length?'Continuer':'Voir les résultats';
   nb.className='next-btn show';
-  // stop any running mic
   if(recogInstance){ recogInstance.stop(); recogInstance=null; }
+  if(SES.mode==='speed') clearSpeedTimer();
 }
 
 function nextQ(){
   SES.idx++;
-  if(SES.idx>=SES.qs.length||SES.lives<=0) endSession(); else renderQ();
+  if(SES.idx>=SES.qs.length||SES.lives<=0) endSession();
+  else{ renderQ(); if(SES.mode==='speed') startSpeedTimer(); }
 }
 
 function addWord(char){ if(!ST.words.includes(char)) ST.words.push(char); }
+
+
+// ═══════════════════════════════════════════════
+// SURVIVAL MODE
+// ═══════════════════════════════════════════════
+function startSurvival(){
+  const allWords=THEMES.flatMap((t,i)=>isThemeUnlocked(i)?t.words.map(w=>({w,t})):[]);
+  if(allWords.length===0) return;
+  const allWordsFull=THEMES.flatMap(t=>t.words);
+  // Unlimited queue — we generate on the fly
+  const picked=allWords.sort(()=>Math.random()-.5);
+  const qs=picked.map(({w,t})=>{
+    const others=getDistractors(w,allWordsFull);
+    // Survival only uses MCQ modes for speed
+    const survivalModes=['mcq','char-mcq','reverse-mcq'];
+    const mode=survivalModes[Math.floor(Math.random()*survivalModes.length)];
+    return {word:w,mode,others,themeId:t.id};
+  });
+  SES={qs,idx:0,correct:0,lives:3,partial:0,themeId:'survival',mode:'survival'};
+  document.getElementById('sess-theme-label').textContent='Mode Survie';
+  showScreen('session'); renderLives(); renderQ();
+}
+
+// ═══════════════════════════════════════════════
+// SPEED MODE
+// ═══════════════════════════════════════════════
+let speedTimer=null;
+let speedSecsLeft=5;
+
+function startSpeed(){
+  const allWords=THEMES.flatMap((t,i)=>isThemeUnlocked(i)?t.words.map(w=>({w,t})):[]);
+  if(allWords.length===0) return;
+  const allWordsFull=THEMES.flatMap(t=>t.words);
+  const picked=allWords.sort(()=>Math.random()-.5).slice(0,20);
+  const qs=picked.map(({w,t})=>{
+    const others=getDistractors(w,allWordsFull);
+    const speedModes=['mcq','char-mcq','reverse-mcq'];
+    const mode=speedModes[Math.floor(Math.random()*speedModes.length)];
+    return {word:w,mode,others,themeId:t.id};
+  });
+  SES={qs,idx:0,correct:0,lives:3,partial:0,themeId:'speed',mode:'speed'};
+  document.getElementById('sess-theme-label').textContent='Mode Vitesse — 5 sec/carte';
+  showScreen('session'); renderLives(); renderQ();
+  startSpeedTimer();
+}
+
+function startSpeedTimer(){
+  clearSpeedTimer();
+  speedSecsLeft=5;
+  updateSpeedBar();
+  // Add timer bar if not present
+  let wrap=document.getElementById('speed-timer-wrap');
+  if(!wrap){
+    wrap=document.createElement('div');
+    wrap.id='speed-timer-wrap';
+    wrap.className='speed-timer-wrap';
+    wrap.innerHTML='<div class="speed-timer-track"><div class="speed-timer-fill" id="speed-fill" style="width:100%"></div></div>';
+    const hdr=document.querySelector('.sess-hdr');
+    hdr.parentNode.insertBefore(wrap,hdr.nextSibling);
+  }
+  wrap.style.display='block';
+  speedTimer=setInterval(()=>{
+    speedSecsLeft-=0.1;
+    updateSpeedBar();
+    if(speedSecsLeft<=0){
+      clearSpeedTimer();
+      timeOut();
+    }
+  },100);
+}
+
+function updateSpeedBar(){
+  const fill=document.getElementById('speed-fill');
+  if(!fill) return;
+  const pct=Math.max(0,speedSecsLeft/5*100);
+  fill.style.width=pct+'%';
+  fill.className='speed-timer-fill'+(speedSecsLeft<2?' urgent':'');
+}
+
+function clearSpeedTimer(){
+  if(speedTimer){ clearInterval(speedTimer); speedTimer=null; }
+}
+
+function timeOut(){
+  // Time's up — count as wrong
+  const w=SES.qs[SES.idx]?.word;
+  if(!w) return;
+  if(SES.lives>0)SES.lives--;
+  renderLives();
+  srsUpdate(w.char,0);
+  const strip=document.getElementById('fb-strip');
+  strip.textContent='Temps écoulé — '+w.char+' = '+w.fr;
+  strip.className='fb-strip err';
+  // Disable all options
+  document.querySelectorAll('.opt-btn').forEach(b=>b.classList.add('disabled'));
+  showNext();
+}
+
+function hideSpeedTimer(){
+  const wrap=document.getElementById('speed-timer-wrap');
+  if(wrap) wrap.style.display='none';
+  clearSpeedTimer();
+}
 
 // ═══════════════════════════════════════════════
 // END SESSION
 // ═══════════════════════════════════════════════
 function endSession(){
-  const prevLv=getLevel();
-  ST.xp+=SES.xpEarned;
-  const newLv=getLevel();
+  hideSpeedTimer();
+
+  // Update survival best
+  if(SES.mode==='survival'){
+    const score=SES.correct;
+    if(score>(ST.survivalBest||0)){ ST.survivalBest=score; }
+  }
   const today=new Date().toDateString(), yest=new Date(Date.now()-86400000).toDateString();
   if(ST.lastPlayed!==today){
     ST.streak = ST.lastPlayed===yest ? ST.streak+1 : 1;
@@ -1428,7 +1632,7 @@ function endSession(){
   document.getElementById('res-icon').textContent=icon;
   document.getElementById('res-title').textContent=title;
   document.getElementById('res-sub').textContent=sub;
-  document.getElementById('r-xp').textContent='+'+SES.xpEarned;
+  document.getElementById('r-xp').textContent=SES.correct+'/'+SES.qs.length;
   document.getElementById('r-acc').textContent=acc+'%';
   document.getElementById('r-str').textContent=ST.streak;
 
@@ -1439,7 +1643,7 @@ function endSession(){
   else srsNote.textContent='Toutes les révisions du jour sont faites !';
 
   showScreen('result'); updateHome();
-  if(newLv>prevLv) setTimeout(()=>showLvUp(newLv),500);
+
 }
 
 // ═══════════════════════════════════════════════
@@ -1459,16 +1663,7 @@ function toast(txt){
   document.body.appendChild(el); setTimeout(()=>el.remove(),1500);
 }
 
-function showLvUp(lv){
-  const nextT=THEMES.find(t=>t.unlockXP>0&&t.unlockXP<=LEVELS[lv].xp&&t.unlockXP>(LEVELS[lv-1]||{xp:0}).xp);
-  const o=document.createElement('div'); o.className='lv-overlay';
-  o.innerHTML=`<div class="lv-badge-big cn">${LEVELS[lv].name[0]}</div>
-    <div class="lv-title">Niveau ${lv+1}</div>
-    <div class="lv-name">${LEVELS[lv].name}</div>
-    ${nextT?`<div class="lv-unlock">Nouveau thème débloqué : ${nextT.name}</div>`:''}
-    <button class="lv-btn" onclick="this.closest('.lv-overlay').remove()">Continuer</button>`;
-  document.body.appendChild(o);
-}
+
 
 function showTones(){ document.getElementById('tones-sheet').style.display='block'; }
 function hideTones(e){ if(!e||e.target.classList.contains('sheet-overlay')) document.getElementById('tones-sheet').style.display='none'; }
