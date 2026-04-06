@@ -1,0 +1,24 @@
+{
+  "name": "上海 · Mandarin",
+  "short_name": "上海",
+  "description": "Apprends le mandarin pour Shanghai",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fdf6ee",
+  "theme_color": "#fdf6ee",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
